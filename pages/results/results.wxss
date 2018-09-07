@@ -1,1 +1,41 @@
 /* pages/results/results.wxss */
+
+.col {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.row {
+ display: inline-flex
+}
+
+.card {
+ border: 1rpx solid black;
+ margin-top: 10rpx 
+}
+
+.card-head {
+ background-color: yellow;
+ padding: 5rpx;
+ width: 100%;
+ border-radius: 5rpx, 5rpx, 0, 0;
+
+}
+
+.card-body {
+
+}
+
+.card-body-left {
+ border: 1rpx solid black;
+  padding: 5rpx;
+
+
+}
+
+.card-body-right {
+ border: 1rpx solid black;
+  padding: 5rpx;
+}

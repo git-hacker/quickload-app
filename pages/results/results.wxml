@@ -1,2 +1,34 @@
 <!--pages/results/results.wxml-->
-<text>pages/results/results.wxml</text>
+<view class="container">
+Search Results
+  <view class="results-container">
+  <!-- test card-->
+    <view class="card col">
+      <view class="card-head">
+      Origin City - Destination City
+      </view>
+      <view class="card-body row">
+        <view class="card-body-left">
+        left side
+        total distance:
+        total shipments:
+        total weight: tons 
+        </view>
+        <view class="card-body-right">
+          <view class="right-top">
+          price total
+          price per km
+          </view>
+          <view class="button-box">
+            <button bindtap="openDetails">细节</button>
+          </view>
+                  </view>
+      </view>
+    </view>
+    <!-- -->
+  <!-- loop through all results
+  <block wx:for="{{results}}" wx:for-item="combo" wx:for-index="index">
+  </block> -->
+
+  </view>
+</view>
