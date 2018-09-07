@@ -1,2 +1,42 @@
 <!--pages/details/details.wxml-->
-<text>pages/details/details.wxml</text>
+<view class="container">
+  <view class="left">back</view>
+  <view class="title row">Details</view>
+  <view class="details-head">
+    <view class="left">Origin - Destination</view>
+    <view class="left">Total Distance: </view>
+  </view>
+
+  <!-- combo list starts-->
+  <view class="list col">
+    <view class="list-item">
+      <view class="left col">
+        <view>Shipper A</view>
+        <view>Cargo Type:</view>
+        <view>Weight: tons</view>
+      </view>
+      <view class="right">200RMB</view>
+    </view>
+  </view>
+
+  <view class="list col">
+    <view class="list-item">
+      <view class="left col">
+        <view>Shipper B</view>
+        <view>Cargo Type:</view>
+        <view>Weight: tons</view>
+      </view>
+      <view class="right">
+        500RMB
+      </view>
+    </view>
+  </view>
+  <!-- list ends here -->
+  <view class="right">
+    <view>price total</view>
+    <view>price per km</view>
+  </view>
+  <view class="button-box">
+    <button class="big-btn" bindtap="accept">接单</button>
+  </view>
+</view>
