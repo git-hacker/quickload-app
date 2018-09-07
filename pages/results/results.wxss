@@ -58,9 +58,9 @@
  background: rgb(0, 109, 235);
  box-shadow: 0rpx 1rpx 10rpx grey;
  color: white;
- margin: 10rpx;
+ margin: 15rpx;
  width: 75%;
-
+ font-size: 12pt;
 }
 
 .hover {

@@ -29,7 +29,6 @@
 }
 
 .rate {
-  margin-top: -25rpx;
   font-weight: 14pt;
 }
 
