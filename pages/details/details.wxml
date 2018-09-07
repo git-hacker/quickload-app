@@ -2,8 +2,8 @@
 <view class="container">
   <view class="title row">Details</view>
   <view class="details-head left">
-    <view class="left">Origin - Destination</view>
-    <view class="left">Total Distance: </view>
+    <view class="left text-pad">Origin - Destination</view>
+    <view class="left text-pad">Total Distance: </view>
   </view>
 
   <!-- combo list starts-->

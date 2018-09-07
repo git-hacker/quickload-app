@@ -6,7 +6,14 @@ Page({
   /**
    * 页面的初始数据
    */
+
   data: {
+    truckType: ['平板', '高栏', '卡车', '冷冻'],
+    length: ['2m', '4m', '6m', '8m', '10m'],
+    axles: ['4x2', '6x4', '8x4'],
+    truckTypeIndex: 0,
+    lengthIndex: 0,
+    axlesIndex: 0,
     provinces: [],
     province: "",
     citys: [],
@@ -17,6 +24,28 @@ Page({
     values: [0, 0, 0],
     condition: false
   },
+
+  listenerPickerSelected: function (e) {
+    //改变index值，通过setData()方法重绘界面
+    this.setData({
+      truckTypeIndex: e.detail.value
+    });
+  },
+
+  listenerPickerSelected2: function (e) {
+    //改变index值，通过setData()方法重绘界面
+    this.setData({
+      lengthIndex: e.detail.value
+    });
+  },
+
+  listenerPickerSelected3: function (e) {
+    //改变index值，通过setData()方法重绘界面
+    this.setData({
+      axlesIndex: e.detail.value
+    });
+  },
+
   bindChange: function (e) {
     var val = e.detail.value
     console.log('val', val)
