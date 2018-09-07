@@ -20,15 +20,19 @@
   width: 100%;
   text-align: left;
   align-items: left;
-  padding-left: 15rpx;
 }
 
 .right {
   text-align: right;
   align-items: right;
-  padding: 15rpx;
+}
+
+.text-pad {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
 }
 
 .big-btn {
   width: 80vw;
 }
+
