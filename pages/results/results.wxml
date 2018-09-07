@@ -5,22 +5,21 @@ Search Results
   <!-- test card-->
     <view class="card col">
       <view class="card-head">
-      Origin City - Destination City
+        <view class="text-pad">Origin City - Destination City</view>
       </view>
       <view class="card-body row">
         <view class="card-body-left">
-        left side
-        total distance:
-        total shipments:
-        total weight: tons 
+          <view class="text-pad">距离:</view>
+          <view class="text-pad">货数:</view>
+          <view class="text-pad">总货重量: 吨 </view>
         </view>
-        <view class="card-body-right">
-          <view class="right-top">
-          price total
-          price per km
-          </view>
-          <view class="button-box">
-            <button bindtap="openDetails">细节</button>
+        <view class="card-body-right col">
+            <view class="row right">
+              <view class="sm-text">总额:</view><view class="big-red-text text-pad"> 1200元</view>
+            </view>
+            <view class="right text-pad sm-text">1.33元/km</view>
+          <view class="button-box row">
+            <button class="details-btn" hover-class="hover" bindtap="openDetails">查细节</button>
           </view>
                   </view>
       </view>
