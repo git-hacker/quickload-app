@@ -18,8 +18,7 @@ Page({
     condition: false
   },
   bindChange: function (e) {
-    var val = e.detail.value 
-    console.log('val', val)
+    var val = e.detail.value1 
     var t = this.data.values;
     var cityData = this.data.cityData;
 
@@ -76,21 +75,6 @@ Page({
   open: function () {
     this.setData({
       condition: !this.data.condition
-    })
-  },
-  getLocation: function() {
-    var locationString = this.data.province + this.data.city + this.data.county
-    let page = this;
-    var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
-    wx.request({
-      url: url,
-      success(res) {
-        console.log(res.data.geocodes.location)
-        var location = res.data.geocodes.location
-        page.setData({
-          location: location
-        })
-      }
     })
   },
 
