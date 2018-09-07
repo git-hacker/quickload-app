@@ -33,12 +33,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "driver",
-					"pathName": "pages/driver/driver"
+					"pathName": "pages/driver/driver",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "results",
+					"pathName": "pages/results/results"
 				}
 			]
 		}
