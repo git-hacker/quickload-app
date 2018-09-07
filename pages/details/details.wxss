@@ -1,1 +1,16 @@
 /* pages/details/details.wxss */
+.details-head {
+    margin-top: 10rpx;
+    border-bottom: 1rpx solid grey;
+}
+
+.list {
+ padding: 15rpx;
+ margin-bottom: 15rpx;
+ border-bottom: 1rpx solid grey;
+}
+
+.list-item {
+ padding: 15px;
+ border: 1rpx solid pink;
+}
