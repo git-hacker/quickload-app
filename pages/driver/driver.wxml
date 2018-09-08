@@ -11,24 +11,7 @@
       </view>
     </view>
 
-    <view wx:if="{{condition}}" class="citypicker">
-      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
-        <view class="cityheader">
-          <view bindtap="open" class="city-cancel">取消</view>
-          <view bindtap="open" class="city-true">确定</view>
-        </view>
-        <picker-view-column>
-          <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-        </picker-view-column>
-      </picker-view>
-    </view>
-
+    
 <view class="row">
   truck type: 
   <view>
@@ -53,10 +36,38 @@
     <picker mode="selector" range="{{axles}}" value="{{axlesIndex}}" bindchange="listenerPickerSelected3">
         <text>{{axles[axlesIndex]}}</text>
     </picker>
+
   </view>
+</view>
+
+<view class="section">
+  <view class="section__title">多列选择器</view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{province[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
 </view>
 
 <button bindtap="">快载搜索</button>
     </view>
   </form>
+  
+  <!-- <view wx:if="{{condition}}" class="citypicker">
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+        <view class="cityheader">
+          <view bindtap="open" class="city-cancel">取消</view>
+          <view bindtap="open" class="city-true">确定</view>
+        </view>
+        <picker-view-column>
+          <view wx:for="{{provinces}}" wx:key="item" class="picker-item">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{citys}}" wx:key="item" class="picker-item">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{countys}}" wx:key="item" class="picker-item">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view> -->
 </view>

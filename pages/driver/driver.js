@@ -25,6 +25,13 @@ Page({
     condition: false
   },
 
+  bindPickerCity: function (e) {
+    console.log("选择的城市:", e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  },
+
   listenerPickerSelected: function (e) {
     //改变index值，通过setData()方法重绘界面
     this.setData({
