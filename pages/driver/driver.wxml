@@ -1,35 +1,17 @@
 <!--pages/driver/driver.wxml-->
 <view class="container">
+  <view class='city-picker'>
+  <picker bindchange="bindOriginChange" value="{{originCityIndex}}" range="{{cityArray}}">{{originCity}}</picker>
+</view>
+<button bindtap='chooseDestination' class="{{destination ? 'selected' : 'not-selected' }}">选择目的地</button>
+<view wx:if="{{destination}}" class='city-picker'>
+  <picker bindchange="bindDestinationChange" value="{{destinationCityIndex}}" range="{{cityArray}}">{{destinationCity}}
+  </picker>
+</view>
   <form bindsubmit="formSubmit">
     <view class="form-container col">
 
     <view><input name="Driver License" class="" placeholder="Driver License #" /></view>
-    origin destination
-    <view class="loc-picker">
-
-      <view class="input">
-        <input placeholder="选择地址" value="{{originProvince}}-{{originCity}}-{{originCounty}}" focus="{{focus}}" bindfocus="open" />
-      </view>
-    </view>
-
-    <view wx:if="{{condition}}" class="citypicker">
-      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChangeOrigin" class="citybody">
-        <view class="cityheader">
-          <view bindtap="open" class="city-cancel">取消</view>
-          <view bindtap="open" class="city-true">确定</view>
-        </view>
-        <picker-view-column>
-          <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-        </picker-view-column>
-      </picker-view>
-    </view>
-
 <view class="row">
   truck type: 
   <view>
