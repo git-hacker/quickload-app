@@ -9,8 +9,11 @@ Page({
 
   data: {
     truckTypes: ['平板', '高栏', '箱式', '冷冻'],
+    truckType: '平板',
     lengths: [4.2, 5.2, 6.2, 6.8, 9.6, 13, 17.5],
+    length: 4.2,
     lengthWeights: {4.2: 1.99, 5.2: 5, 6.2: 8, 6.8: 10, 9.6: 15, 13: 30, 17.5: 28},
+    weight: 1.99,
     truckTypeIndex: 0,
     lengthIndex: 0,
     axlesIndex: 0,

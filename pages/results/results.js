@@ -20,35 +20,39 @@ Page({
     console.log('lenght',options.length)
 
     if (options.destination == "所有目的地" || options.destination == "可选") {
-      // send request WITHOUT destination param
-      wx.request({
-        url: host + 'find-shipment',
-        method: 'post',
-        header: {'Content-Type': 'application/json'},
-        data: {
-          "Name": options.name,
-          "License": options.license,
-          "Origin": options.origin,
-          "TruckType": {
-            "Length": options.length,
-            "Weight": options.weight,
-            "Type": options.truckType
-          }
-        },
-        success: res => {
-          console.log('success',res)
+      var body = {
+        "Name": options.name,
+        "License": options.license,
+        "Origin": options.origin,
+        "TruckType": {
+          "Length": options.length * 100,
+          "Weight": options.weight,
+          "Type": options.truckType
         }
-      })
-
+      }
     } else {
-     // send request WITH destination
-      myRequest.post({
-        path: `findshipment`,
-        success: function (res) {
-          page.setData({ data: res})
+      var body = {
+        Name: options.name,
+        License: options.license,
+        Origin: options.origin,
+        Destination: options.destination,
+        TruckType: {
+          Length: options.length * 100,
+          Weight: options.weight,
+          Type: options.truckType
         }
-      })
+      }
     }
+    console.log(body)
+    wx.request({
+      url: host + 'find-shipment',
+      method: 'post',
+      header: { 'Content-Type': 'application/json' },
+      data: body,
+      success: res => {
+        console.log('success', res)
+      }
+    })
   },
 
   /**
