@@ -36,7 +36,7 @@
   color: white;
   background: forestgreen;
   margin: 25rpx;
-  box-shadow: 0rpx 1rpx 10rpx grey;
+  box-shadow:  0px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hover {

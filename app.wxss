@@ -1,4 +1,9 @@
 /**app.wxss**/
+
+
+
+
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -6,6 +11,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background: linear-gradient(to bottom, #fff6ec, #ffffffe5); 
+
 } 
 .col {
   display: flex;

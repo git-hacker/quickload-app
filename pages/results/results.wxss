@@ -8,7 +8,8 @@
 
 .card {
  margin-top: 10rpx;
- width: 90vw
+ width: 90vw;
+ background-color: white;
 }
 
 .card-head {
@@ -22,12 +23,12 @@
 }
 
 .card-body {
- border: 1rpx solid darkgray;
+ border: 2rpx solid rgb(236, 197, 20);
  padding-top:15rpx;
 }
 
 .card-body-left {
- font-size: 12pt;
+ font-size: 11pt;
  width: 50%;
 }
 
@@ -55,8 +56,8 @@
     align-content: flex-end
 }
 .details-btn {
- background: rgb(0, 109, 235);
- box-shadow: 0rpx 1rpx 10rpx grey;
+ background: linear-gradient(to bottom, #0575e6, #1035bd);
+ box-shadow:  0px 1px 5px rgba(0, 0, 0, 0.5);
  color: white;
  margin: 15rpx;
  width: 75%;
@@ -64,6 +65,6 @@
 }
 
 .hover {
-  background: rgb(3, 120, 255);
+  background: rgb(1, 87, 185);
   box-shadow: none
 }

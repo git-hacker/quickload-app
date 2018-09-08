@@ -75,6 +75,7 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    console.log('global', app.globalData.userInfo)
   },
 
   bindOriginChange: function(e) {
@@ -104,6 +105,12 @@ Page({
     }
   },
 
+submitForm: function () {
+
+wx.navigateTo({
+  url: `/pages/results/results?name=${app.globalData.userInfo.nickName}&license=${this.data.license}&origin=${this.data.originCity}&destination=${this.data.destinationCity}&truckType=${this.data.truckType}&length=${this.data.length}&weight=${this.data.weight}`,
+})
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -119,7 +126,6 @@ Page({
         })
       }
     })
-    
   },
 
 
