@@ -15,6 +15,16 @@ input {
   border-radius: 5px;
 }
 
+.search {
+ background: linear-gradient(to bottom, #ffdc3e, #f7bd1e);
+ margin: 25rpx;
+  box-shadow: 0rpx 1rpx 10rpx grey;
+}
+
+.hover {
+  background: #f7bd1e;
+  box-shadow: none
+}
 
 .citypickers{
   position: fixed;

@@ -8,6 +8,12 @@
 
   <!-- combo list starts-->
   <view class="list">
+
+    <!-- loop through all results
+  <block wx:for="{{results}}" wx:for-item="combo" wx:for-index="index">
+  </block> -->
+  
+  <!-- list item starts -->
     <view class="list-item">
       <view class="left">
         <view class="">Shipper A</view>
@@ -17,7 +23,7 @@
       <view class="right">800RMB</view>
     </view>
   </view>
-
+<!-- end list item -->
   <view class="list">
     <view class="list-item">
       <view class="left">
