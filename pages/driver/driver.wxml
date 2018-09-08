@@ -6,6 +6,7 @@
     <view><input name="Driver License" class="" placeholder="Driver License #" /></view>
     origin destination
     <view class="loc-picker">
+
       <view class="input">
         <input placeholder="选择地址" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />
       </view>
@@ -45,6 +46,7 @@
         <text>{{length[lengthIndex]}}</text>
     </picker>
   </view>
+
 </view>
 
 <view class="row">

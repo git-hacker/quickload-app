@@ -15,15 +15,16 @@ Page({
     lengthIndex: 0,
     axlesIndex: 0,
     provinces: [],
-    province: "",
+    originProvince: "",
     citys: [],
-    city: "",
+    originCity: "",
     countys: [],
-    county: '',
+    originCounty: '',
     value: [0, 0, 0],
     values: [0, 0, 0],
     condition: false
   },
+
 
   listenerPickerSelected: function (e) {
     //改变index值，通过setData()方法重绘界面
@@ -46,7 +47,7 @@ Page({
     });
   },
 
-  bindChange: function (e) {
+  bindChangeOrigin: function (e) {
     var val = e.detail.value
     console.log('val', val)
     var t = this.data.values;
@@ -65,10 +66,10 @@ Page({
       }
 
       this.setData({
-        province: this.data.provinces[val[0]],
-        city: cityData[val[0]].sub[0].name,
+        originProvince: this.data.provinces[val[0]],
+        originCity: cityData[val[0]].sub[0].name,
         citys: citys,
-        county: cityData[val[0]].sub[0].sub[0].name,
+        originCounty: cityData[val[0]].sub[0].sub[0].name,
         countys: countys,
         values: val,
         value: [val[0], 0, 0]
@@ -85,8 +86,8 @@ Page({
       }
 
       this.setData({
-        city: this.data.citys[val[1]],
-        county: cityData[val[0]].sub[val[1]].sub[0].name,
+        originCity: this.data.citys[val[1]],
+        originCounty: cityData[val[0]].sub[val[1]].sub[0].name,
         countys: countys,
         values: val,
         value: [val[0], val[1], 0]
@@ -96,7 +97,7 @@ Page({
     if (val[2] != t[2]) {
       console.log('county');
       this.setData({
-        county: this.data.countys[val[2]],
+        originCounty: this.data.countys[val[2]],
         values: val
       })
       return;
@@ -107,8 +108,10 @@ Page({
       condition: !this.data.condition
     })
   },
-  getLocation: function () {
-    var locationString = this.data.province + this.data.city + this.data.county
+
+  getLocation: function() {
+    var locationString = this.data.originProvince + this.data.originCity + this.data.originCounty
+
     let page = this;
     var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
     wx.request({
@@ -121,6 +124,11 @@ Page({
         })
       }
     })
+  },
+
+  getDistance: function() {
+    const location = this.data.location
+
   },
 
   /**
@@ -154,9 +162,9 @@ Page({
       'provinces': provinces,
       'citys': citys,
       'countys': countys,
-      'province': cityData[0].name,
-      'city': cityData[0].sub[0].name,
-      'county': cityData[0].sub[0].sub[0].name
+      'originProvince': cityData[0].name,
+      'originCity': cityData[0].sub[0].name,
+      'originCounty': cityData[0].sub[0].sub[0].name
     })
     console.log('初始化完成');
   },
