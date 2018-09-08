@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/driver/driver",
     "pages/details/details",
-    "pages/results/results"
+    "pages/results/results",
+    "pages/workorders/workorders"
   ],
   "window": {
     "backgroundTextStyle": "light",
