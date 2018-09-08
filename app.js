@@ -35,34 +35,26 @@ App({
   },
 
   getLocation: function (e) {
-    var locationString = e.detail.value
+    let app = this;
+    console.log('getting location')
+    var locationString = e
     var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
     wx.request({
       url: url,
       success(res) {
-        console.log(res.data.geocodes.location)
-        var location = res.data.geocodes.location
-        return location
+        var location = res.data.geocodes[0].location
+        console.log('location', location)
+        app.globalData.locations[e] = location
+        console.log('app', app.globalData)
+        
       }
     })
   },
 
-  getDistance: function (e) {
-    var origin = e.detail.value.origin
-    var destination = e.detail.value.destination
-    var originLocation = this.getLocation(origin)
-    var destinationLocation = this.getLocation(destination)
-    wx.request({
-      url: `https://restapi.amap.com/v3/distance?key=0b085d826757c57521465d4faa3f05be&origins=${originLocation}&destination=${destinationLocation}`,
-      success(res) {
-        console.log(res.data.results.distance)
-        var distance = res.data.results.distance
-        return distance
-      }
-    })
-  },
+  
 
   globalData: {
-    userInfo: null
+    userInfo: null,
+    locations: {'key': 'value'}
   }
 })
