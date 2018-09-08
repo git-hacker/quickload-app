@@ -3,6 +3,13 @@
   justify-items: center;
 }
 
+.logo{
+  width: 200rpx;
+  height: 200rpx;
+  transform: rotate(-20deg);
+  padding: 50rpx;
+  margin-top: -175rpx;
+}
 .form-container {
   height: 100vh;
   width: 87vw;
@@ -20,10 +27,13 @@ input, .picker {
 
 .long {
   width: 80vw;
+  height: 25px;
+  padding-top: 20rpx;
 }
 
 .city {
   width: 400rpx;
+  height: 25px;
   margin: 15rpx;
   font-size: 10pt;
   vertical-align: middle;
@@ -39,9 +49,10 @@ input, .picker {
 }
 
 .search {
+  border: 3rpx solid black;
  background: linear-gradient(to bottom, #ffdc3e, #f7bd1e);
  margin: 25rpx;
-  box-shadow: 0rpx 1rpx 10rpx grey;
+ box-shadow:  0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .hover {

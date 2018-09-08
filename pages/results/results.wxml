@@ -5,7 +5,7 @@ Search Results
   <!-- test card-->
     <view class="card col">
       <view class="card-head">
-        <view class="text-pad">Origin City - Destination City</view>
+        <view class="text-pad">Origin - Destination</view>
       </view>
       <view class="card-body row">
         <view class="card-body-left">
