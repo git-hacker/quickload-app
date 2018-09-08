@@ -28,6 +28,7 @@ input, .picker {
 .long {
   width: 80vw;
   height: 25px;
+  padding-top: 20rpx;
 }
 
 .city {
@@ -48,6 +49,7 @@ input, .picker {
 }
 
 .search {
+  border: 3rpx solid black;
  background: linear-gradient(to bottom, #ffdc3e, #f7bd1e);
  margin: 25rpx;
  box-shadow:  0px 1px 5px rgba(0, 0, 0, 0.2);
