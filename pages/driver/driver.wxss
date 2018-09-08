@@ -9,10 +9,29 @@
   justify-content: center
 }
 
-input {
+input, .city-picker {
   border: 1px solid grey;
-  padding: 5rpx;
+  padding: 10rpx;
   border-radius: 5px;
+  margin: 15rpx;
+}
+
+.city-picker{
+  width: 400rpx;
+  margin: 15rpx;
+}
+
+.row {
+  justify-content: center
+}
+
+.city-picker {
+
+}
+
+.loc-icon {
+  height: 35rpx;
+  width: 35rpx;
 }
 
 .search {
@@ -24,81 +43,4 @@ input {
 .hover {
   background: #f7bd1e;
   box-shadow: none
-}
-
-.citypickers{
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  background-color: #ff0;
-}
-
-
-.citybody {
-  position: fixed;
-  bottom: 0px;
-  left:0px;
-
-}
-
-.cityheader {
-  position: absolute;
-  top:0px;
-  width: 100%;
-  z-index: 5;
-  border-bottom: 1px solid lightgrey;
-}
-
-.city-cancel {
-  float: left;
-  margin: 30rpx;
-  color: #828282;
-}
-
-.city-true {
-  float: right;
-  margin: 30rpx;
-  color: forestgreen;
-}
-
-.section .picker {
-  background-color: #fff;
-  border-bottom: 2px #cccccc solid;
-  border-top: 2px #d9d9d9 solid;
-  padding: 20rpx;
-}
-
-.selected {
-  background-color: peachpuff;
-}
-
-.not-selected {
-  background-color: white;
-}
-
-.picker-view {
-  width: 100%;
-  display: flex;
-  z-index:12;
-  background-color: #fff;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0rpx;
-  left: 0rpx;
-  height: 40vh;
-}
-
-.picker-item {
-  line-height: 100rpx;
-  margin-left: 5rpx;
-  margin-right: 5rpx;
-  text-align: center;
-}
-
-.picker-view-column {
-  position: relative;
-  left: 0;
 }
