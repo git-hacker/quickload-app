@@ -21,7 +21,7 @@ Page({
     destination: false,
     destinationCityIndex: 0,
     originCity: '成都',
-    destinationCity: '成都'
+    destinationCity: '可选'
   },
 
   listenerPickerSelected: function (e) {

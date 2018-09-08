@@ -1,16 +1,19 @@
 <!--pages/driver/driver.wxml-->
 <view class="container">
-  <view class='city-picker'>
-  <picker bindchange="bindOriginChange" value="{{originCityIndex}}" range="{{cityArray}}">{{originCity}}</picker>
-</view>
-<button bindtap='chooseDestination' class="{{destination ? 'selected' : 'not-selected' }}">选择目的地</button>
-<view wx:if="{{destination}}" class='city-picker'>
-  <picker bindchange="bindDestinationChange" value="{{destinationCityIndex}}" range="{{cityArray}}">{{destinationCity}}
-  </picker>
-</view>
+ 
   <form bindsubmit="formSubmit">
     <view class="form-container col">
+      <view class="row">
+        <view class='city-picker'>
+          <picker bindchange="bindOriginChange" value="{{originCityIndex}}" range="{{cityArray}}"><image class="loc-icon" src="https://png.icons8.com/ios/52/2ecc71/marker-filled.png"></image>终点: {{originCity}}</picker>
+        </view>
 
+                <view class='city-picker'>
+          <picker bindchange="bindDestinationChange" placeholder="可选" value="{{destinationCityIndex}}" range="{{cityArray}}"><image class="loc-icon" src="https://png.icons8.com/ios/52/e74c3c/marker-filled.png"></image>目的地: {{destinationCity}}</picker>
+        </view>
+        
+      </view>
+       
     <view><input name="Driver License" class="" placeholder="Driver License #" /></view>
 
 <view class="row">
