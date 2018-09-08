@@ -28,7 +28,7 @@
         <view class="expand">货箱长度: {{lengths[lengthIndex]}}米</view>
     </picker>
 
-    <button class="big-btn search" hover-class="hover" bindtap="" open-type="getUserInfo" bindgetuserinfo="getUserInfo">快载搜索</button>
+    <button class="big-btn search" hover-class="hover" bindtap="submitForm" open-type="getUserInfo" bindgetuserinfo="getUserInfo">快载搜索</button>
     </view>
   </form>
   

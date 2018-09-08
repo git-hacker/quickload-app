@@ -8,7 +8,8 @@
 
 .card {
  margin-top: 10rpx;
- width: 90vw
+ width: 90vw;
+ background-color: white;
 }
 
 .card-head {
