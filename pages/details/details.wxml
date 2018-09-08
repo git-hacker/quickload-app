@@ -1,9 +1,34 @@
 <!--pages/details/details.wxml-->
 <view class="container">
-  <view class="title row">Details</view>
-  <view class="details-head left">
-    <view class="left text-pad">Origin - Destination</view>
-    <view class="left text-pad">Total Distance: </view>
+
+  <view class="banner row">
+  
+    <view class="banner-item">
+      <view class="col"> 
+        <view>总重量</view>
+        <view class="bigfig row">40<view class="smfig">吨</view></view>
+      </view>
+    </view>
+
+    <view class="banner-item">
+      <view class="col"> 
+        <view> 总距离 </view>
+        <view class="bigfig row">900<view class="smfig">km</view></view>
+      </view>
+    </view>
+
+      <view class="banner-item">
+      <view class="col"> 
+        <view class="">总额</view>
+        <view class="total row">￥1200</view>
+        <view class="rate smfig">1.33元/km</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="details-head">
+    <view class="text-pad">成都 - 上海</view>
   </view>
 
   <!-- combo list starts-->
@@ -14,47 +39,39 @@
   </block> -->
   
   <!-- list item starts -->
-    <view class="list-item">
-      <view class="left">
-        <view class="">Shipper A</view>
-        <view>Cargo Type:</view>
-        <view>Weight: tons</view>
-      </view>
-      <view class="right">800RMB</view>
+  <view class="list-item">
+    <view class="left">
+      <view class="item-row"><view class="left">Shipper A</view> <view class="right">800RMB</view></view>
+      <view>shipment ID:</view>
+      <view>Cargo Type:</view>
+      <view>Weight: tons</view>
     </view>
-  </view>
+
+    </view>
+
 <!-- end list item -->
-  <view class="list">
-    <view class="list-item">
-      <view class="left">
-        <view>Shipper B</view>
-        <view>Cargo Type:</view>
-        <view>Weight: tons</view>
-      </view>
-      <view class="right">
-        400RMB
-      </view>
+<view class="list-item">
+    <view class="left">
+      <view class="item-row"><view class="left">Shipper B</view> <view class="right">800RMB</view></view>
+      <view>shipment ID:</view>
+      <view>Cargo Type:</view>
+      <view>Weight: tons</view>
     </view>
-  </view>
+  
+    </view>
 
-    <view class="list">
-    <view class="list-item">
-      <view class="left">
-        <view>Shipper B</view>
-        <view>Cargo Type:</view>
-        <view>Weight: tons</view>
-      </view>
-      <view class="right">
-        400RMB
-      </view>
+   <view class="list-item">
+    <view class="left">
+      <view class="item-row"><view class="left">Shipper C</view> <view class="right">800RMB</view></view>
+      <view>shipment ID:</view>
+      <view>Cargo Type:</view>
+      <view>Weight: tons</view>
     </view>
-  </view>
+     
+    </view>
+
   <!-- list ends here -->
-
-    <view class="footer">
-      <view class="right total text-pad">总额: 1200元</view>
-      <view class="right rate text-pad">1.33元/km</view>
-    </view>
+  </view>
   <view class="button-box">
     <button class="big-btn accept" hover-class="hover" bindtap="acceptShipment" >接单</button>
   </view>

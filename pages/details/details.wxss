@@ -1,12 +1,44 @@
 /* pages/details/details.wxss */
-.title {
-  justify-content: center;
+.banner {
+  justify-content: space-evenly;
+  /* background-color: #f7bd1e; */
+  background: linear-gradient(to bottom, #f7bd1e, #ffd45e);
+  width: 100vw;
+  height: 14%;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
+.col {
+  align-items: center;
+}
+
+.item-row{
+  display: inline-flex;
+  width: 95vw;
+}
+.banner-item {
+  font-size: 9pt;
+  color: black;
+  width: 33vw;
+}
+.bigfig {
+  padding-top: 10rpx;
+  font-weight: bold;
+  font-size: 18pt;
+  color: #2c2c2c;
+}
+
+.smfig {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 10pt;
+  color: #2c2c2c;
+  
+}
 .details-head {
     margin-top: 10rpx;
     margin-bottom: 15rpx;
-    border-bottom: 5rpx solid grey;
 }
 
 .list {
@@ -16,6 +48,8 @@
 }
 
 .list-item {
+  border-top: 2rpx solid black;
+  font-size:11pt;
 }
 
 .footer {
@@ -23,6 +57,7 @@
 }
 
 .total {
+  padding-top: 10rpx;
   font-weight: bold;
   font-size: 18pt;
   color: crimson;
@@ -32,11 +67,25 @@
   font-weight: 14pt;
 }
 
+.button-box {
+    align-content: flex-end;
+    position: absolute;
+    bottom: 0;
+}
+
 .accept {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: white;
-  background: forestgreen;
-  margin: 25rpx;
+  background: linear-gradient(to top, #059218, #00be46);
+  margin: 0rpx;
   box-shadow:  0px 1px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  width: 100vw;
+  font-weight: bold;
+  height: 110rpx;
+  
 }
 
 .hover {

@@ -53,7 +53,7 @@
 }
 
 .button-box {
-    align-content: flex-end
+    align-content: flex-end;
 }
 .details-btn {
  background: linear-gradient(to bottom, #0575e6, #1035bd);
