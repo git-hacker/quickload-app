@@ -20,7 +20,7 @@
       <view class="banner-item">
       <view class="col"> 
         <view class="">总额</view>
-        <view class="total row">￥1200</view>
+        <view class="total row">￥2400</view>
         <view class="rate smfig">1.33元/km</view>
       </view>
     </view>

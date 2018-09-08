@@ -3,6 +3,7 @@
  
   <form bindsubmit="formSubmit">
     <view class="form-container col">
+    <view class="row"><image class="logo" src="/lib/quickloadlogo.gif"></image></view>
       <view class="row">
         <view class="city picker">
           <picker bindchange="bindOriginChange" value="{{originCityIndex}}" range="{{cityArray}}"><image class="loc-icon" src="https://png.icons8.com/ios/52/2ecc71/marker-filled.png"></image>终点: {{originCity}}</picker>
