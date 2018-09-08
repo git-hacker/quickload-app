@@ -8,6 +8,12 @@
 
   <!-- combo list starts-->
   <view class="list">
+
+    <!-- loop through all results
+  <block wx:for="{{results}}" wx:for-item="combo" wx:for-index="index">
+  </block> -->
+  
+  <!-- list item starts -->
     <view class="list-item">
       <view class="left">
         <view class="">Shipper A</view>
@@ -17,7 +23,7 @@
       <view class="right">800RMB</view>
     </view>
   </view>
-
+<!-- end list item -->
   <view class="list">
     <view class="list-item">
       <view class="left">
@@ -50,6 +56,6 @@
       <view class="right rate text-pad">1.33元/km</view>
     </view>
   <view class="button-box">
-    <button class="big-btn accept" hover-class="hover" bindtap="accept" >接单</button>
+    <button class="big-btn accept" hover-class="hover" bindtap="acceptShipment" >接单</button>
   </view>
 </view>

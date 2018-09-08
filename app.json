@@ -4,12 +4,13 @@
     "pages/logs/logs",
     "pages/driver/driver",
     "pages/details/details",
-    "pages/results/results"
+    "pages/results/results",
+    "pages/workorders/workorders"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#f7bd1e",
+    "navigationBarTitleText": "QuickLoad",
     "navigationBarTextStyle": "black"
   }
 }

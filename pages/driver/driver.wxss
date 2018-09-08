@@ -1,11 +1,72 @@
 /* pages/driver/driver.wxss */
+.container {
+  justify-items: center;
+}
 
 .form-container {
-
+  height: 100vh;
+  width: 80vw;
+  justify-content: center
 }
 
 input {
-  border: 1px solid black;
+  border: 1px solid grey;
+  padding: 5rpx;
+  border-radius: 5px;
+}
+
+.search {
+ background: linear-gradient(to bottom, #ffdc3e, #f7bd1e);
+ margin: 25rpx;
+  box-shadow: 0rpx 1rpx 10rpx grey;
+}
+
+.hover {
+  background: #f7bd1e;
+  box-shadow: none
+}
+
+.citypickers{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  background-color: #ff0;
+}
+
+
+.citybody {
+  position: fixed;
+  bottom: 0px;
+  left:0px;
+
+}
+
+.cityheader {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  z-index: 5;
+  border-bottom: 1px solid lightgrey;
+}
+
+.city-cancel {
+  float: left;
+  margin: 30rpx;
+  color: #828282;
+}
+
+.city-true {
+  float: right;
+  margin: 30rpx;
+  color: forestgreen;
+}
+
+.section .picker {
+  background-color: #fff;
+  border-bottom: 2px #cccccc solid;
+  border-top: 2px #d9d9d9 solid;
+  padding: 20rpx;
 }
 
 .selected {
@@ -31,8 +92,13 @@ input {
 }
 
 .picker-item {
-  line-height: 70rpx;
+  line-height: 100rpx;
   margin-left: 5rpx;
   margin-right: 5rpx;
   text-align: center;
+}
+
+.picker-view-column {
+  position: relative;
+  left: 0;
 }

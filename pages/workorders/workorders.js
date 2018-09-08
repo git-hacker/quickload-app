@@ -1,22 +1,13 @@
-// pages/details/details.js
+// pages/workorders/workorders.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    acceptedOrders: 0
   },
 
-  acceptShipment: function () {
-    //toast accepted!
-    //mark items as shipped
-    //then? print page?
-    // navigate to driver itinerary with item IDs
-    wx.navigateTo({
-      url: '/pages/workorders/workorders'
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */

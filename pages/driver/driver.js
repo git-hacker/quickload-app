@@ -24,7 +24,6 @@ Page({
     destinationCity: '成都'
   },
 
-
   listenerPickerSelected: function (e) {
     //改变index值，通过setData()方法重绘界面
     this.setData({
