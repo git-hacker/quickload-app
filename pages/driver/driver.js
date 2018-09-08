@@ -76,26 +76,6 @@ Page({
     })
   },
 
-  getLocation: function(e) {
-    var locationString = this.data.cityArray[e]
-
-    let page = this;
-    var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
-    wx.request({
-      url: url,
-      success(res) {
-        console.log(res.data.geocodes.location)
-        var location = res.data.geocodes.location
-        return location
-      }
-    })
-  },
-
-  getDistance: function() {
-    const location = this.data.location
-
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
