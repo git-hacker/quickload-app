@@ -8,6 +8,11 @@ Page({
   
   },
 
+  acceptShipment: function () {
+    //toast accepted!
+    //mark items as shipped
+    //then? print page?
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -50,6 +50,6 @@
       <view class="right rate text-pad">1.33元/km</view>
     </view>
   <view class="button-box">
-    <button class="big-btn accept" hover-class="hover" bindtap="accept" >接单</button>
+    <button class="big-btn accept" hover-class="hover" bindtap="acceptShipment" >接单</button>
   </view>
 </view>
