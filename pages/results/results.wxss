@@ -1,41 +1,69 @@
 /* pages/results/results.wxss */
 
-.col {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
-}
-
-.row {
- display: inline-flex
+.results-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 3%;
 }
 
 .card {
- border: 1rpx solid black;
- margin-top: 10rpx 
+ margin-top: 10rpx;
+ width: 90vw
 }
 
 .card-head {
- background-color: yellow;
- padding: 5rpx;
+ display: inline-flex;
+ background: linear-gradient(to bottom, #ffdc3e, #f7bd1e);
  width: 100%;
- border-radius: 5rpx, 5rpx, 0, 0;
-
+ font-size: 12pt;
+ border-radius: 10rpx 10rpx 0 0;
+ padding-top: 5rpx;
+ padding-bottom: 5rpx;
 }
 
 .card-body {
-
+ border: 1rpx solid darkgray;
+ padding-top:15rpx;
 }
 
 .card-body-left {
- border: 1rpx solid black;
-  padding: 5rpx;
-
-
+ font-size: 12pt;
+ width: 50%;
 }
 
 .card-body-right {
- border: 1rpx solid black;
-  padding: 5rpx;
+    width: 50%;
+}
+
+.sm-text {
+    font-size: 11pt;
+    align-self: flex-end;
+}
+
+.big-red-text {
+  font-weight: bold;
+  font-size: 15pt;
+  color: crimson;
+   align-self: flex-end;
+}
+
+.row {
+  justify-content: flex-end;
+}
+
+.button-box {
+    align-content: flex-end
+}
+.details-btn {
+ background: rgb(0, 109, 235);
+ box-shadow: 0rpx 1rpx 10rpx grey;
+ color: white;
+ margin: 15rpx;
+ width: 75%;
+ font-size: 12pt;
+}
+
+.hover {
+  background: rgb(3, 120, 255);
+  box-shadow: none
 }

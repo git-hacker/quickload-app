@@ -6,6 +6,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 10rpx;
-  box-sizing: border-box;
 } 
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+ display: inline-flex
+}
+
+.left {
+  width: 100%;
+  text-align: left;
+  align-items: left;
+}
+
+.right {
+  text-align: right;
+  align-items: right;
+}
+
+.text-pad {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.big-btn {
+  width: 80vw;
+}
+

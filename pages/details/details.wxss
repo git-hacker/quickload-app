@@ -1,1 +1,46 @@
 /* pages/details/details.wxss */
+.title {
+  justify-content: center;
+}
+
+.details-head {
+    margin-top: 10rpx;
+    margin-bottom: 15rpx;
+    border-bottom: 5rpx solid grey;
+}
+
+.list {
+ width: 95vw;
+ margin-bottom: 15rpx;
+ border-bottom: 1rpx solid grey;
+}
+
+.list-item {
+}
+
+.footer {
+  width: 100%;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 18pt;
+  color: crimson;
+}
+
+.rate {
+  font-weight: 14pt;
+}
+
+.accept {
+  color: white;
+  background: forestgreen;
+  margin: 25rpx;
+  box-shadow: 0rpx 1rpx 10rpx grey;
+}
+
+.hover {
+  background: green;
+  border: 1rpx solid grey;
+  box-shadow: none
+}

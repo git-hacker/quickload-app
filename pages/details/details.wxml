@@ -1,2 +1,55 @@
 <!--pages/details/details.wxml-->
-<text>pages/details/details.wxml</text>
+<view class="container">
+  <view class="title row">Details</view>
+  <view class="details-head left">
+    <view class="left text-pad">Origin - Destination</view>
+    <view class="left text-pad">Total Distance: </view>
+  </view>
+
+  <!-- combo list starts-->
+  <view class="list">
+    <view class="list-item">
+      <view class="left">
+        <view class="">Shipper A</view>
+        <view>Cargo Type:</view>
+        <view>Weight: tons</view>
+      </view>
+      <view class="right">800RMB</view>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="list-item">
+      <view class="left">
+        <view>Shipper B</view>
+        <view>Cargo Type:</view>
+        <view>Weight: tons</view>
+      </view>
+      <view class="right">
+        400RMB
+      </view>
+    </view>
+  </view>
+
+    <view class="list">
+    <view class="list-item">
+      <view class="left">
+        <view>Shipper B</view>
+        <view>Cargo Type:</view>
+        <view>Weight: tons</view>
+      </view>
+      <view class="right">
+        400RMB
+      </view>
+    </view>
+  </view>
+  <!-- list ends here -->
+
+    <view class="footer">
+      <view class="right total text-pad">总额: 1200元</view>
+      <view class="right rate text-pad">1.33元/km</view>
+    </view>
+  <view class="button-box">
+    <button class="big-btn accept" hover-class="hover" bindtap="accept" >接单</button>
+  </view>
+</view>

@@ -6,7 +6,14 @@ Page({
   /**
    * 页面的初始数据
    */
+
   data: {
+    truckType: ['平板', '高栏', '卡车', '冷冻'],
+    length: ['2m', '4m', '6m', '8m', '10m'],
+    axles: ['4x2', '6x4', '8x4'],
+    truckTypeIndex: 0,
+    lengthIndex: 0,
+    axlesIndex: 0,
     provinces: [],
     originProvince: "",
     citys: [],
@@ -17,9 +24,31 @@ Page({
     values: [0, 0, 0],
     condition: false
   },
+
+
+  listenerPickerSelected: function (e) {
+    //改变index值，通过setData()方法重绘界面
+    this.setData({
+      truckTypeIndex: e.detail.value
+    });
+  },
+
+  listenerPickerSelected2: function (e) {
+    //改变index值，通过setData()方法重绘界面
+    this.setData({
+      lengthIndex: e.detail.value
+    });
+  },
+
+  listenerPickerSelected3: function (e) {
+    //改变index值，通过setData()方法重绘界面
+    this.setData({
+      axlesIndex: e.detail.value
+    });
+  },
+
   bindChangeOrigin: function (e) {
-    var val = e.detail.value 
-    console.log(this.data)
+    var val = e.detail.value
     console.log('val', val)
     var t = this.data.values;
     var cityData = this.data.cityData;
@@ -79,8 +108,10 @@ Page({
       condition: !this.data.condition
     })
   },
+
   getLocation: function() {
     var locationString = this.data.originProvince + this.data.originCity + this.data.originCounty
+
     let page = this;
     var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
     wx.request({
@@ -143,48 +174,48 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
