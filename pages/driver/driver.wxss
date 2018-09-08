@@ -5,28 +5,31 @@
 
 .form-container {
   height: 100vh;
-  width: 80vw;
+  width: 87vw;
   justify-content: center
 }
 
-input, .city-picker {
+input, .picker {
   border: 1px solid grey;
   padding: 10rpx;
   border-radius: 5px;
   margin: 15rpx;
+  font-size: 10pt;
 }
 
-.city-picker{
+.long {
+  width: 80vw;
+}
+
+.city {
   width: 400rpx;
   margin: 15rpx;
+  font-size: 10pt;
+  vertical-align: middle;
 }
 
 .row {
   justify-content: center
-}
-
-.city-picker {
-
 }
 
 .loc-icon {
@@ -43,4 +46,9 @@ input, .city-picker {
 .hover {
   background: #f7bd1e;
   box-shadow: none
+}
+
+.expand {
+  width:80vw;
+  text-align:center;
 }
