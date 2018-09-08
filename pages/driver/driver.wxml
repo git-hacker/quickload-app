@@ -1,17 +1,18 @@
 <!--pages/driver/driver.wxml-->
 <view class="container">
+  <view class='city-picker'>
+  <picker bindchange="bindOriginChange" value="{{originCityIndex}}" range="{{cityArray}}">{{originCity}}</picker>
+</view>
+<button bindtap='chooseDestination' class="{{destination ? 'selected' : 'not-selected' }}">选择目的地</button>
+<view wx:if="{{destination}}" class='city-picker'>
+  <picker bindchange="bindDestinationChange" value="{{destinationCityIndex}}" range="{{cityArray}}">{{destinationCity}}
+  </picker>
+</view>
   <form bindsubmit="formSubmit">
     <view class="form-container col">
 
     <view><input name="Driver License" class="" placeholder="Driver License #" /></view>
-    origin destination
-    <view class="loc-picker">
-      <view class="input">
-        <input placeholder="选择地址" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />
-      </view>
-    </view>
 
-    
 <view class="row">
   truck type: 
   <view>
@@ -28,6 +29,7 @@
         <text>{{length[lengthIndex]}}</text>
     </picker>
   </view>
+
 </view>
 
 <view class="row">

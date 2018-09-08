@@ -69,6 +69,14 @@ input {
   padding: 20rpx;
 }
 
+.selected {
+  background-color: peachpuff;
+}
+
+.not-selected {
+  background-color: white;
+}
+
 .picker-view {
   width: 100%;
   display: flex;
