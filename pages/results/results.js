@@ -16,8 +16,8 @@ Page({
    */
   onLoad: function (options) {
     let page = this
-    console.log('onLoad options', options)
-    console.log('lenght',options.length)
+    // console.log('onLoad options', options)
+    // console.log('lenght',options.length)
 
     if (options.destination == "所有目的地" || options.destination == "可选") {
       var body = {
@@ -43,7 +43,7 @@ Page({
         }
       }
     }
-    console.log(body)
+    // console.log(body)
     wx.request({
       url: host + 'find-shipment',
       method: 'post',
