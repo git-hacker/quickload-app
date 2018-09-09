@@ -2,9 +2,10 @@
 <view class="container">
 Search Results ({{numResults}})
   <view class="results-container">
-  <!-- test card-->
     <view class="card col">
-      <view class="card-head">
+
+      <!-- test card-->
+      <!-- <view class="card-head">
         <view class="text-pad">Origin - Destination</view>
       </view>
       <view class="card-body row">
@@ -22,7 +23,7 @@ Search Results ({{numResults}})
             <button class="details-btn" hover-class="hover" bindtap="openDetails">查细节</button>
           </view>
         </view>
-      </view>
+      </view> -->
     
     <!-- end test card-->
 
@@ -36,11 +37,11 @@ Search Results ({{numResults}})
         <view class="card-body-left">
           <view class="text-pad">距离:</view>
           <view class="text-pad">货数: {{combo.length}}</view>
-          <view class="text-pad">总货重量: 吨 </view>
+          <view class="text-pad">总货重量: {{combo[combo.length - 1]}}吨 </view>
         </view>
         <view class="card-body-right col">
             <view class="row right">
-              <view class="sm-text">总额:</view><view class="big-red-text text-pad"> 1200元</view>
+              <view class="sm-text">总额:</view><view class="big-red-text text-pad"> {{combo[combo.length - 2]}}元</view>
             </view>
             <view class="right text-pad sm-text">1.33元/km</view>
           <view class="button-box row">

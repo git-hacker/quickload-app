@@ -65,6 +65,9 @@ Page({
             totalComboWeight += item.RequiredTruckInformation.Weight
           })
           console.log('combo total price and weight', totalComboPrice, totalComboWeight)
+          combo.push([totalComboPrice])
+          combo.push([totalComboWeight])
+          console.log('combo weight', combo)
         })
 
         page.setData({
