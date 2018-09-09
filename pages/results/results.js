@@ -1,15 +1,19 @@
 // pages/results/results.js
 const host = 'http://192.168.102.242:3000/'
 const app = getApp()
+
 Page({
 
   data: {
   
   },
 
-  openDetails: function () {
+  openDetails: function (e) {
+    app.globalData.current_combo_index = e.index
+    // console.log(999, e.currentTarget.dataset.id)
+    let index = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/details/details'
+      url: `/pages/details/details?index=${index}`
     })
   },
   /**
@@ -29,7 +33,7 @@ Page({
         "License": options.license,
         "Origin": options.origin,
         "TruckType": {
-          "Length": options.length * 100,
+          "Length": options.length * 10,
           "Weight": options.weight * 2,
           "Type": options.truckType
         }
@@ -41,13 +45,12 @@ Page({
         Origin: options.origin,
         Destination: options.destination,
         TruckType: {
-          Length: options.length * 100,
-          Weight: options.weight * 1,
+          Length: options.length * 10,
+          Weight: options.weight * 2,
           Type: options.truckType
         }
       }
     }
-    // console.log(body)
     wx.request({
       url: host + 'find-shipment',
       method: 'post',
@@ -56,6 +59,8 @@ Page({
 
       success: res => {
         let shipments = res.data.shipments
+        app.globalData.shipments = shipments
+
 
         // forEach combo forEach item add weights, prices
         shipments.forEach(function (combo) {
@@ -65,14 +70,41 @@ Page({
             totalComboPrice += item.Price
             totalComboWeight += item.RequiredTruckInformation.Weight
           })
+
           combo.push([totalComboPrice])
           combo.push([totalComboWeight])
         })
 
+          let sortedShipments = []
+          sortedShipments = shipments.sort(function (a, b) {
+          var keyA = a[a.length - 2],
+            keyB = b[b.length - 2];
+          if (keyA < keyB) return -1;
+            if (keyA > keyB) return 1;
+          return 0;
+        });
+
+        
+        // function uniq(a) {
+        //   var prims = { "boolean": {}, "number": {}, "string": {} }, objs = [];
+
+        //   return a.filter(function (item) {
+        //     var type = typeof item;
+        //     if (type in prims)
+        //       return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
+        //     else
+        //       return objs.indexOf(item) >= 0 ? false : objs.push(item);
+        //   });
+        // }
+     
+        // console.log('unqiuefunc', uniq(sortedShipments))
+
+
         page.setData({
           numResults: res.data.shipments.length,
-          shipments: shipments
+          shipments: sortedShipments.reverse()
         });
+
         
         let _shipments = page.data.shipments
         _shipments.forEach(function(ships) {
@@ -87,6 +119,7 @@ Page({
               shipments: _shipments
             })
             console.log(999, page.data.shipments)
+
           })
         })
       
@@ -95,6 +128,7 @@ Page({
   },
 
   getDistance: function (e) {
+
     let that = this;
     return new Promise((resolve, reject) => {
       var origin = e.origin
@@ -140,6 +174,7 @@ Page({
 
         }
       })
+
     })
    
   },
