@@ -16,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('userinfo?', app.globalData.userInfo)
     let page = this
     let totalComboPrice = 0
     let totalComboWeight = 0
@@ -54,7 +55,6 @@ Page({
       data: body,
 
       success: res => {
-        console.log('success', res)
         let shipments = res.data.shipments
 
         // forEach combo forEach item add weights, prices
@@ -65,48 +65,83 @@ Page({
             totalComboPrice += item.Price
             totalComboWeight += item.RequiredTruckInformation.Weight
           })
-          console.log('combo total price and weight', totalComboPrice, totalComboWeight)
           combo.push([totalComboPrice])
           combo.push([totalComboWeight])
-          console.log('combo weight', combo)
         })
 
         page.setData({
           numResults: res.data.shipments.length,
           shipments: shipments
         });
-          console.log(999,page.data.shipments)
-        page.data.shipments.forEach(function(ships) {
-          ships.forEach(function(s) {
-            // console.log('from', s.Origin)
-            // console.log('to', s.Destination)
-            let distance = page.getDistance({origin: s.Origin, destination: s.Destination})
-            console.log('how far?', distance)
+        
+        let _shipments = page.data.shipments
+        _shipments.forEach(function(ships) {
+          let s = ships[0]
+          console.log('from', s.Origin, 'to', s.Destination)
+          let distance
+          page.getDistance({ origin: s.Origin, destination: s.Destination }).then((dis) =>{
+            distance = dis
+            s.distance = distance
+            console.log(11111, s)
+            page.setData({
+              shipments: _shipments
+            })
+            console.log(999, page.data.shipments)
           })
         })
+      
       }
     })
   },
 
   getDistance: function (e) {
-    console.log('calculating distance', e)
-    var origin = e.origin
-    var destination = e.destination
-    app.getLocation(destination)
-    app.getLocation(origin)
-    var originLocation = app.globalData[origin]
-    var destinationLocation = app.globalData[destination]
-    console.log('app in results', app.globalData)
-    let locations = app.globalData.locations
-    console.log('上海', locations)
-    wx.request({
-      url: `https://restapi.amap.com/v3/distance?key=0b085d826757c57521465d4faa3f05be&origins=${originLocation}&destination=${destinationLocation}`,
-      success(res) {
-        console.log(res.data.results.distance)
-        var distance = res.data.results.distance
-        return distance
-      }
+    let that = this;
+    return new Promise((resolve, reject) => {
+      var origin = e.origin
+      let originLocation
+      let destinationLocation
+      var destination = e.destination
+      that.getLocation(origin)
+        .then((loc) => {
+          originLocation = loc
+          return loc
+        }).then((res) => {
+          that.getLocation(destination)
+            .then((loc) => {
+              console.log(333, loc)
+              console.log(555, originLocation)
+              destinationLocation = loc
+              wx.request({
+                url: `https://restapi.amap.com/v3/distance?key=0b085d826757c57521465d4faa3f05be&origins=${originLocation}&destination=${destinationLocation}`,
+                success(res) {
+                  console.log(777, res)
+                  var distance = res.data.results[0].distance
+                  console.log(666, distance)
+                  resolve(distance)
+
+                }
+              })
+
+            })
+        })
     })
+  },
+
+  getLocation: function (e) {
+    return new Promise((resolve, reject) => {
+      var locationString = e
+      var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
+      wx.request({
+        url: url,
+        success(res) {
+          var location = res.data.geocodes[0].location
+          console.log(222,location)
+          resolve(location)
+
+        }
+      })
+    })
+   
   },
 
   /**
