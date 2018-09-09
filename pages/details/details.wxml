@@ -6,71 +6,50 @@
     <view class="banner-item">
       <view class="col"> 
         <view>总重量</view>
-        <view class="bigfig row">40<view class="smfig">吨</view></view>
+        <view class="bigfig row">{{combo[combo.length - 1]}}<view class="smfig">吨</view></view>
       </view>
     </view>
 
     <view class="banner-item">
       <view class="col"> 
         <view> 总距离 </view>
-        <view class="bigfig row">900<view class="smfig">km</view></view>
+        <view class="bigfig row"><view class="smfig">km</view></view>
       </view>
     </view>
 
       <view class="banner-item">
       <view class="col"> 
         <view class="">总额</view>
-        <view class="total row">￥2400</view>
-        <view class="rate smfig">1.33元/km</view>
+        <view class="total row">￥{{combo[combo.length - 2]}}</view>
+        <view class="rate smfig">元/km</view>
       </view>
     </view>
 
   </view>
 
   <view class="details-head">
-    <view class="text-pad">成都 - 上海</view>
+    <view class="text-pad">{{combo[0].Origin}} - {{combo[0].Destination}}</view>
   </view>
 
   <!-- combo list starts-->
   <view class="list">
 
-    <!-- loop through all results
-  <block wx:for="{{results}}" wx:for-item="combo" wx:for-index="index">
-  </block> -->
-  
-  <!-- list item starts -->
+    <!-- loop through items in combo -->
+  <block wx:for="{{combo}}" wx:for-item="item" wx:for-index="index" wx:if="{{index < combo.length-2}}">
   <view class="list-item">
     <view class="left">
-      <view class="item-row"><view class="left">Shipper A</view> <view class="right">800RMB</view></view>
-      <view>shipment ID:</view>
-      <view>Cargo Type:</view>
-      <view>Weight: tons</view>
+      <view class="item-row"><view class="left">Shipper: {{item.ShipperName}}</view> <view class="right">￥{{item.Price}}</view></view>
+      <view>shipment ID: {{item._id}}</view>
+      <view>Cargo Type: {{item.CargoInformation.TypeName}}</view>
+      <view>Weight: {{item.RequiredTruckInformation.Length}}米 {{item.RequiredTruckInformation.Weight}}吨</view>
     </view>
 
     </view>
-
-<!-- end list item -->
-<view class="list-item">
-    <view class="left">
-      <view class="item-row"><view class="left">Shipper B</view> <view class="right">800RMB</view></view>
-      <view>shipment ID:</view>
-      <view>Cargo Type:</view>
-      <view>Weight: tons</view>
-    </view>
-  
-    </view>
-
-   <view class="list-item">
-    <view class="left">
-      <view class="item-row"><view class="left">Shipper C</view> <view class="right">800RMB</view></view>
-      <view>shipment ID:</view>
-      <view>Cargo Type:</view>
-      <view>Weight: tons</view>
-    </view>
-     
-    </view>
+</block>
 
   <!-- list ends here -->
+
+
   </view>
   <view class="button-box">
     <button class="big-btn accept" hover-class="hover" bindtap="acceptShipment" >接单</button>
