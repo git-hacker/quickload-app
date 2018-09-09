@@ -16,6 +16,8 @@ Page({
    */
   onLoad: function (options) {
     let page = this
+    let totalComboPrice = 0
+    let totalComboWeight = 0
     // console.log('onLoad options', options)
     // console.log('lenght',options.length)
 
@@ -26,7 +28,7 @@ Page({
         "Origin": options.origin,
         "TruckType": {
           "Length": options.length * 100,
-          "Weight": options.weight * 1,
+          "Weight": options.weight * 2,
           "Type": options.truckType
         }
       }
@@ -52,9 +54,22 @@ Page({
 
       success: res => {
         console.log('success', res)
+        let shipments = res.data.shipments
+
+        // forEach combo forEach item add weights, prices
+        shipments.forEach(function (combo) {
+          let totalComboPrice = 0
+          let totalComboWeight = 0 
+          combo.forEach(function (item) {
+            totalComboPrice += item.Price
+            totalComboWeight += item.RequiredTruckInformation.Weight
+          })
+          console.log('combo total price and weight', totalComboPrice, totalComboWeight)
+        })
+
         page.setData({
           numResults: res.data.shipments.length,
-          shipments: res.data.shipments
+          shipments: shipments
         });
           console.log(999,page.data.shipments)
       }
