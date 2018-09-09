@@ -28,6 +28,7 @@ Search Results ({{numResults}})
     <!-- end test card-->
 
   <!-- loop through all results -->
+  <view class="notfound" wx:if="{{!numResults}}">没有搜索结果！</view>
   <block wx:for="{{shipments}}" wx:for-item="combo" wx:for-index="index">
   <view class="card col">
       <view class="card-head">

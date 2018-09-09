@@ -8,7 +8,10 @@
     justify-content: space-around;
     padding: 3%;
 }
-
+.notfound {
+    width: 100vw;
+    text-align: center;
+}
 .card {
  margin-top: 10rpx;
  width: 90vw;
