@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/driver/driver",
     "pages/details/details",
     "pages/results/results",

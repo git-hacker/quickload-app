@@ -19,6 +19,7 @@ Page({
   onLoad: function (options) {
     let page = this
     console.log('onLoad options', options)
+    
     if (options.destination == "所有目的地" || options.destination == "可选") {
       // send request WITHOUT destination param
       
