@@ -119,6 +119,7 @@ Page({
               shipments: _shipments
             })
             console.log(999, page.data.shipments)
+            app.globalData.shipments = _shipments
 
           })
         })

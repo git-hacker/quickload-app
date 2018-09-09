@@ -13,7 +13,7 @@
     <view class="banner-item">
       <view class="col"> 
         <view> 总距离 </view>
-        <view class="bigfig row"><view class="smfig">km</view></view>
+        <view class="bigfig row">{{combo[0].distance / 1000}}<view class="smfig">km</view></view>
       </view>
     </view>
 

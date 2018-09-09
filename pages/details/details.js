@@ -30,6 +30,7 @@ Page({
     page.setData({
       combo: app.globalData.shipments[comboID]
     });
+    console.log("whereare you",combo)
 
   },
 
