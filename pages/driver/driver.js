@@ -13,7 +13,8 @@ Page({
     truckTypeIndex: 0,
     lengthIndex: 0,
     axlesIndex: 0,
-    cityArray: ['不选目的地','成都', '上海', '深圳', '广州', '重庆', '北京', '石家庄', '天津', '青岛', '昆明', '西安', '乌鲁木齐', '长沙', '武汉', '厦门', '杭州', '南京', '太原', '呼和浩特', '沈阳'],
+    cityArray: ['成都', '上海', '深圳', '广州', '重庆', '北京', '石家庄', '天津', '青岛', '昆明', '西安', '乌鲁木齐', '长沙', '武汉', '厦门', '杭州', '南京', '太原', '呼和浩特', '沈阳'],
+    destCityArray: ['所有目的地','成都', '上海', '深圳', '广州', '重庆', '北京', '石家庄', '天津', '青岛', '昆明', '西安', '乌鲁木齐', '长沙', '武汉', '厦门', '杭州', '南京', '太原', '呼和浩特', '沈阳'],
     originCityIndex: 0,
     value: [0, 0, 0],
     values: [0, 0, 0],
@@ -94,11 +95,11 @@ Page({
     this.setData({
       destinationCityIndex: e.detail.value
     })
-    console.log(this.data.cityArray[this.data.destinationCityIndex])
+    console.log(this.data.destCityArray[this.data.destinationCityIndex])
     this.setData({
-      destinationCity: page.data.cityArray[page.data.destinationCityIndex]
+      destinationCity: page.data.destCityArray[page.data.destinationCityIndex]
     })
-    if (this.data.destinationCity == '不选目的') {
+    if (this.data.destinationCity == '所有目的地' || this.data.destinationCity == '可选' ) {
       this.setData({destination: false})
     } else {
       this.setData({destination: true})
