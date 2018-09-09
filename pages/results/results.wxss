@@ -1,4 +1,7 @@
 /* pages/results/results.wxss */
+.container {
+    height: 100%;
+}
 
 .results-container {
     display: flex;

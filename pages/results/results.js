@@ -52,6 +52,11 @@ Page({
 
       success: res => {
         console.log('success', res)
+        page.setData({
+          numResults: res.data.shipments.length,
+          shipments: res.data.shipments
+        });
+          console.log(999,page.data.shipments)
       }
     })
   },
