@@ -34,27 +34,9 @@ App({
     })
   },
 
-  getLocation: function (e) {
-    let app = this;
-    console.log('getting location')
-    var locationString = e
-    var url = `https://restapi.amap.com/v3/geocode/geo?key=0b085d826757c57521465d4faa3f05be&address=${locationString}`
-    wx.request({
-      url: url,
-      success(res) {
-        var location = res.data.geocodes[0].location
-        console.log('location', location)
-        app.globalData.locations[e] = location
-        console.log('app', app.globalData)
-        
-      }
-    })
-  },
-
-  
-
   globalData: {
     userInfo: null,
-    locations: {'key': 'value'}
+    locations: [],
+    cities: []
   }
 })

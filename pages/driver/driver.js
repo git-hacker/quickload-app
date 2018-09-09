@@ -92,7 +92,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-    console.log('global', app.globalData.userInfo)
   },
 
   bindOriginChange: function(e) {
