@@ -25,7 +25,7 @@ Page({
   onLoad: function (options) {
     let page = this
     let comboID = options.index
-    console.log(666, app.globalData.shipments[comboID])
+    // console.log(666, app.globalData.shipments[comboID])
 
     page.setData({
       combo: app.globalData.shipments[comboID]

@@ -32,7 +32,7 @@ Page({
         "License": options.license,
         "Origin": options.origin,
         "TruckType": {
-          "Length": options.length * 100,
+          "Length": options.length * 10,
           "Weight": options.weight * 2,
           "Type": options.truckType
         }
@@ -44,13 +44,12 @@ Page({
         Origin: options.origin,
         Destination: options.destination,
         TruckType: {
-          Length: options.length * 100,
-          Weight: options.weight * 1,
+          Length: options.length * 10,
+          Weight: options.weight * 2,
           Type: options.truckType
         }
       }
     }
-    // console.log(body)
     wx.request({
       url: host + 'find-shipment',
       method: 'post',
@@ -76,13 +75,35 @@ Page({
           combo.push([totalComboWeight])
         })
 
-        // let priceSorted = shipments[0].sort((a, b) => a[0] - b[0])
+          let sortedShipments = []
+          sortedShipments = shipments.sort(function (a, b) {
+          var keyA = a[a.length - 2],
+            keyB = b[b.length - 2];
+          if (keyA < keyB) return -1;
+            if (keyA > keyB) return 1;
+          return 0;
+        });
+
+        
+        // function uniq(a) {
+        //   var prims = { "boolean": {}, "number": {}, "string": {} }, objs = [];
+
+        //   return a.filter(function (item) {
+        //     var type = typeof item;
+        //     if (type in prims)
+        //       return prims[type].hasOwnProperty(item) ? false : (prims[type][item] = true);
+        //     else
+        //       return objs.indexOf(item) >= 0 ? false : objs.push(item);
+        //   });
+        // }
+     
+        // console.log('unqiuefunc', uniq(sortedShipments))
+
 
         page.setData({
           numResults: res.data.shipments.length,
-          shipments: shipments
+          shipments: sortedShipments.reverse()
         });
-          console.log("combos", page.data.shipments)
       }
     })
   },
