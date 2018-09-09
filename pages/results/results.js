@@ -1,9 +1,7 @@
 // pages/results/results.js
+const host = 'http://192.168.102.242:3000/'
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
   
   },
@@ -19,12 +17,37 @@ Page({
   onLoad: function (options) {
     let page = this
     console.log('onLoad options', options)
-    
+    console.log('lenght',options.length)
+
     if (options.destination == "所有目的地" || options.destination == "可选") {
       // send request WITHOUT destination param
-      
+      wx.request({
+        url: host + 'find-shipment',
+        method: 'post',
+        header: {'Content-Type': 'application/json'},
+        data: {
+          "Name": options.name,
+          "License": options.license,
+          "Origin": options.origin,
+          "TruckType": {
+            "Length": options.length,
+            "Weight": options.weight,
+            "Type": options.truckType
+          }
+        },
+        success: res => {
+          console.log('success',res)
+        }
+      })
+
     } else {
      // send request WITH destination
+      myRequest.post({
+        path: `findshipment`,
+        success: function (res) {
+          page.setData({ data: res})
+        }
+      })
     }
   },
 
