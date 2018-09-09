@@ -1,5 +1,7 @@
 // pages/driver/driver.js
 var app = getApp()
+const myRequest = require('../../lib/api/request')
+
 Page({
 
   /**
