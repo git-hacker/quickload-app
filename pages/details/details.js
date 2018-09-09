@@ -1,4 +1,6 @@
 // pages/details/details.js
+const app = getApp()
+
 Page({
 
   /**
@@ -21,7 +23,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let page = this
+    let comboID = options.index
+    console.log(666, app.globalData.shipments[comboID])
+
+    page.setData({
+      combo: app.globalData.shipments[comboID]
+    });
+
   },
 
   /**

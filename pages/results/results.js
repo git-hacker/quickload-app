@@ -1,14 +1,19 @@
 // pages/results/results.js
 const host = 'http://192.168.102.242:3000/'
+const app = getApp()
+
 Page({
 
   data: {
   
   },
 
-  openDetails: function () {
+  openDetails: function (e) {
+    app.globalData.current_combo_index = e.index
+    // console.log(999, e.currentTarget.dataset.id)
+    let index = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/details/details'
+      url: `/pages/details/details?index=${index}`
     })
   },
   /**
@@ -55,6 +60,8 @@ Page({
       success: res => {
         console.log('success', res)
         let shipments = res.data.shipments
+        app.globalData.shipments = shipments
+
 
         // forEach combo forEach item add weights, prices
         shipments.forEach(function (combo) {
@@ -64,17 +71,18 @@ Page({
             totalComboPrice += item.Price
             totalComboWeight += item.RequiredTruckInformation.Weight
           })
-          console.log('combo total price and weight', totalComboPrice, totalComboWeight)
+          // console.log('combo total price and weight', totalComboPrice, totalComboWeight)
           combo.push([totalComboPrice])
           combo.push([totalComboWeight])
-          console.log('combo weight', combo)
         })
+
+        // let priceSorted = shipments[0].sort((a, b) => a[0] - b[0])
 
         page.setData({
           numResults: res.data.shipments.length,
           shipments: shipments
         });
-          console.log(999,page.data.shipments)
+          console.log("combos", page.data.shipments)
       }
     })
   },

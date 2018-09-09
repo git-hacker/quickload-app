@@ -28,24 +28,24 @@ Search Results ({{numResults}})
     <!-- end test card-->
 
   <!-- loop through all results -->
-  <block wx:for="{{shipments}}" wx:for-item="combo" wx:for-index="index" data-id="{{combo.id}}">
-  <view id="{{combo.id}}" class="card col">
+  <block wx:for="{{shipments}}" wx:for-item="combo" wx:for-index="index">
+  <view class="card col">
       <view class="card-head">
         <view class="text-pad">{{shipments[index][0].Origin}} - {{shipments[index][0].Destination}}</view>
       </view>
       <view class="card-body row">
         <view class="card-body-left">
           <view class="text-pad">距离:</view>
-          <view class="text-pad">货数: {{combo.length}}</view>
+          <view class="text-pad">货数: {{combo.length - 2}}</view>
           <view class="text-pad">总货重量: {{combo[combo.length - 1]}}吨 </view>
         </view>
         <view class="card-body-right col">
             <view class="row right">
               <view class="sm-text">总额:</view><view class="big-red-text text-pad"> {{combo[combo.length - 2]}}元</view>
             </view>
-            <view class="right text-pad sm-text">1.33元/km</view>
+            <view class="right text-pad sm-text">元/km</view>
           <view class="button-box row">
-            <button class="details-btn" hover-class="hover" bindtap="openDetails">查细节</button>
+            <button class="details-btn" hover-class="hover" bindtap="openDetails" data-id="{{index}}">查细节</button>
           </view>
         </view>
       </view>
