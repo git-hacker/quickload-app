@@ -1,6 +1,5 @@
 // pages/driver/driver.js
 var app = getApp()
-const myRequest = require('../../lib/api/request')
 
 Page({
 
@@ -50,6 +49,7 @@ Page({
         lengthWeights: {4.2: 3, 5.2: 5, 7.6: 8, 8.6: 9, 9.6: 12, 13.7: 15, 15: 20}
       })
     }
+// reload length picker with array 
   },
 
   bindLengthChange: function (e) {

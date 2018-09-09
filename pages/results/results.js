@@ -1,4 +1,6 @@
 // pages/results/results.js
+const myRequest = require('../../lib/api/request')
+
 Page({
 
   /**
@@ -19,12 +21,24 @@ Page({
   onLoad: function (options) {
     let page = this
     console.log('onLoad options', options)
-    
+
     if (options.destination == "所有目的地" || options.destination == "可选") {
       // send request WITHOUT destination param
-      
+      myRequest.get({
+        path: `shipments/${app.globalData.userId}`,
+        success: function (res) {
+          page.setData({ data: res })
+        }
+      })
+
     } else {
      // send request WITH destination
+      myRequest.get({
+        path: `shipments/${app.globalData.userId}`,
+        success: function (res) {
+          page.setData({ data: res})
+        }
+      })
     }
   },
 
