@@ -38,7 +38,7 @@ Page({
         Destination: options.destination,
         TruckType: {
           Length: options.length * 100,
-          Weight: options.weight,
+          Weight: options.weight * 1,
           Type: options.truckType
         }
       }
@@ -46,21 +46,10 @@ Page({
     console.log(body)
     wx.request({
       url: host + 'find-shipment',
-      method: 'POST',
-      header: {'Content-Type': 'application/json' },
-      data: {
+      method: 'post',
+      header: {'Content-Type': 'application/json'},
+      data: body,
 
-        "Name": "Driver A",
-        "License": "232393873",
-        "Origin": "成都",
-
-        "TruckType": {
-          "Length": 50,
-          "Weight": 35,
-
-          "Type": "Refrigerator"
-        }
-      },
       success: res => {
         console.log('success', res)
       }

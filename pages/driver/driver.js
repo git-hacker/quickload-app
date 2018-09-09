@@ -9,7 +9,7 @@ Page({
 
   data: {
     truckTypes: ['平板', '高栏', '箱式', '冷冻'],
-    truckType: '平板',
+    truckType: 'Flat Bed',
     lengths: [4.2, 5.2, 6.2, 6.8, 9.6, 13, 17.5],
     length: 4.2,
     lengthWeights: {4.2: 1.99, 5.2: 5, 6.2: 8, 6.8: 10, 9.6: 15, 13: 30, 17.5: 28},
@@ -31,10 +31,21 @@ Page({
 
   bindTruckTypeChange: function (e) {
     let page = this;
-    //改变index值，通过setData()方法重绘界面
+    let i = e.detail.value
+
+    if (i == 0) {
+      var truckType = "Flat Bed"
+    } else if (i == 1) {
+        var truckType = "High Cage"
+    } else if (i == 2) {
+        var truckType = "Box Truck"
+    } else {
+        var truckType = "Refrigerator"
+    }
+
     page.setData({
       truckTypeIndex: e.detail.value,
-      truckType: page.data.truckTypes[e.detail.value]
+      truckType: truckType
     });
     if (e.detail.value == 0 || e.detail.value == 2) {
       page.setData({
