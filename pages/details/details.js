@@ -11,7 +11,7 @@ Page({
   },
 
   acceptShipment: function () {
-    let shipments = this.data.combo
+    let shipments = app.globalData.shipments
     let ids = []
     shipments.forEach(function(s) {
       ids.push(s._id)
