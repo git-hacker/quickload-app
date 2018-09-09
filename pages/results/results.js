@@ -16,8 +16,8 @@ Page({
    */
   onLoad: function (options) {
     let page = this
-    console.log('onLoad options', options)
-    console.log('lenght',options.length)
+    // console.log('onLoad options', options)
+    // console.log('lenght',options.length)
 
     if (options.destination == "所有目的地" || options.destination == "可选") {
       var body = {
@@ -26,7 +26,7 @@ Page({
         "Origin": options.origin,
         "TruckType": {
           "Length": options.length * 100,
-          "Weight": options.weight,
+          "Weight": options.weight * 1,
           "Type": options.truckType
         }
       }
@@ -38,17 +38,18 @@ Page({
         Destination: options.destination,
         TruckType: {
           Length: options.length * 100,
-          Weight: options.weight,
+          Weight: options.weight * 1,
           Type: options.truckType
         }
       }
     }
-    console.log(body)
+    // console.log(body)
     wx.request({
       url: host + 'find-shipment',
       method: 'post',
-      header: { 'Content-Type': 'application/json' },
+      header: {'Content-Type': 'application/json'},
       data: body,
+
       success: res => {
         console.log('success', res)
       }
