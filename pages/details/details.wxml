@@ -35,14 +35,13 @@
   <view class="list">
 
     <!-- loop through items in combo -->
-  <block wx:for="{{combo}}" wx:for-item="item" wx:for-index="index">
-    
- <view class="list-item">
+  <block wx:for="{{combo}}" wx:for-item="item" wx:for-index="index" wx:if="{{index < combo.length-2}}">
+  <view class="list-item">
     <view class="left">
       <view class="item-row"><view class="left">Shipper: {{item.ShipperName}}</view> <view class="right">￥{{item.Price}}</view></view>
       <view>shipment ID: {{item._id}}</view>
       <view>Cargo Type: {{item.CargoInformation.TypeName}}</view>
-      <view>Weight: {{item.RequiredTruckInformation.Length}}米, {{item.RequiredTruckInformation.Weight}}吨</view>
+      <view>Weight: {{item.RequiredTruckInformation.Length}}米 {{item.RequiredTruckInformation.Weight}}吨</view>
     </view>
 
     </view>
