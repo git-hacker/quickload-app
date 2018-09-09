@@ -114,6 +114,13 @@ Page({
           page.getDistance({ origin: s.Origin, destination: s.Destination }).then((dis) =>{
             distance = dis
             s.distance = distance
+            let price = ships[ships.length - 2]
+            console.log('price', price)
+            let pricePerMile = price / distance * 1000        
+            pricePerMile = Math.round(pricePerMile *100) / 100
+            console.log('price per mile', pricePerMile)
+            s.pricePerMile = pricePerMile
+            
             console.log(11111, s)
             page.setData({
               shipments: _shipments
