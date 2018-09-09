@@ -10,7 +10,7 @@
         </view>
 
                 <view class='city picker'>
-          <picker bindchange="bindDestinationChange" placeholder="可选" value="{{destinationCityIndex}}" range="{{cityArray}}"><image class="loc-icon" src="https://png.icons8.com/ios/52/e74c3c/marker-filled.png"></image>目的地: {{destinationCity}}</picker>
+          <picker bindchange="bindDestinationChange" placeholder="可选" value="{{destinationCityIndex}}" range="{{destCityArray}}"><image class="loc-icon" src="https://png.icons8.com/ios/52/e74c3c/marker-filled.png"></image>目的地: {{destinationCity}}</picker>
         </view>
         
       </view>
