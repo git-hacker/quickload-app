@@ -1,5 +1,6 @@
 // pages/results/results.js
 const host = 'http://192.168.102.242:3000/'
+const app = getApp()
 Page({
 
   data: {
@@ -23,7 +24,7 @@ Page({
 
     if (options.destination == "所有目的地" || options.destination == "可选") {
       var body = {
-        "Name": options.name,
+        "Name": app.globalData.userInfo.nickName,
         "License": options.license,
         "Origin": options.origin,
         "TruckType": {
@@ -34,7 +35,7 @@ Page({
       }
     } else {
       var body = {
-        Name: options.name,
+        Name: app.globalData.userInfo.nickName,
         License: options.license,
         Origin: options.origin,
         Destination: options.destination,
@@ -75,6 +76,35 @@ Page({
           shipments: shipments
         });
           console.log(999,page.data.shipments)
+        page.data.shipments.forEach(function(ships) {
+          ships.forEach(function(s) {
+            // console.log('from', s.Origin)
+            // console.log('to', s.Destination)
+            let distance = page.getDistance({origin: s.Origin, destination: s.Destination})
+            console.log('how far?', distance)
+          })
+        })
+      }
+    })
+  },
+
+  getDistance: function (e) {
+    console.log('calculating distance', e)
+    var origin = e.origin
+    var destination = e.destination
+    app.getLocation(destination)
+    app.getLocation(origin)
+    var originLocation = app.globalData[origin]
+    var destinationLocation = app.globalData[destination]
+    console.log('app in results', app.globalData)
+    let locations = app.globalData.locations
+    console.log('上海', locations)
+    wx.request({
+      url: `https://restapi.amap.com/v3/distance?key=0b085d826757c57521465d4faa3f05be&origins=${originLocation}&destination=${destinationLocation}`,
+      success(res) {
+        console.log(res.data.results.distance)
+        var distance = res.data.results.distance
+        return distance
       }
     })
   },

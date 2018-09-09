@@ -125,7 +125,7 @@ Page({
 submitForm: function () {
 
 wx.navigateTo({
-  url: `/pages/results/results?name=${app.globalData.userInfo.nickName}&license=${this.data.license}&origin=${this.data.originCity}&destination=${this.data.destinationCity}&truckType=${this.data.truckType}&length=${this.data.length}&weight=${this.data.weight}`,
+  url: `/pages/results/results?license=${this.data.license}&origin=${this.data.originCity}&destination=${this.data.destinationCity}&truckType=${this.data.truckType}&length=${this.data.length}&weight=${this.data.weight}`,
 })
 },
   /**
