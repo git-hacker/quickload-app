@@ -1,6 +1,6 @@
 // pages/details/details.js
 const app = getApp()
-
+let host = "http://192.168.102.242:3000/"
 Page({
 
   /**
@@ -11,6 +11,27 @@ Page({
   },
 
   acceptShipment: function () {
+    let shipments = this.data.combo
+    let ids = []
+    shipments.forEach(function(s) {
+      ids.push(s._id)
+    })
+    
+    console.log(8888,shipments)
+    wx.request({
+      url: host + 'accept-shipments',
+      method: 'post',
+      header: { 'Content-Type': 'application/json' },
+      data: {driverid: app.globalData.license,
+      shipments: ids},
+
+      success: res => {
+        let shipments = res.data.shipments
+        app.globalData.shipments = shipments
+      }
+    })
+    //pass driver ID and shipments as an array
+    //shipment ID numbers as array
     //toast accepted!
     //mark items as shipped
     //then? print page?

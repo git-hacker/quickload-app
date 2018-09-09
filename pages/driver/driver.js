@@ -122,7 +122,7 @@ Page({
   },
 
 submitForm: function () {
-
+   app.globalData.license = this.data.license
 wx.navigateTo({
   url: `/pages/results/results?license=${this.data.license}&origin=${this.data.originCity}&destination=${this.data.destinationCity}&truckType=${this.data.truckType}&length=${this.data.length}&weight=${this.data.weight}`,
 })
