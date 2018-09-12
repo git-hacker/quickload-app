@@ -4,11 +4,11 @@ QuickLoad is a WeChat Mini-Program for showcasing the QuickLoad trucker to shipm
 Getting Started
 Download the app from: https://github.com/git-hacker/quickload-app
 Download the server from: https://github.com/git-hacker/quickload-server
+Refer to server setup instructions in the quickload-server repo README
 
 Prerequisites
 Download and install WeChat Mini-Program IDE (https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=18091020)
 
-<!-- Run Server instructions here -->
 
 Running the app
 Open the Wechat IDE.
@@ -18,6 +18,9 @@ Click the "+" icon on the bottom right corner of the window.
 In the first input field, navigate to the quickload-app directory and click OK.
 The AppID and App name fields should automatically propogate.
 Click Confirm.
+In /pages/results.js and /pages/details.js, check to see if "host" variable is set to the location of the server. If running from local machine, it should be set as the following: 
+`const host = 'http://localhost:3000'`
+
 
 The first interface is the truck driver information screen. Enter the city of origin (where the driver wants to pick up shipments from) and destination city (where the driver wants to deliver to - destination field is optional and can be left blank or "所有目的地" can be selected to return results from all destinations).
 Enter Driver License in next field (currently this can be any string of characters).
