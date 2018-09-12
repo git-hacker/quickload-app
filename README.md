@@ -1,16 +1,16 @@
 # QuickLoad
 QuickLoad is a WeChat Mini-Program for showcasing the QuickLoad trucker to shipment matching algorithm. The app takes input from the driver about the driver's truck and the intended route and makes a search request to the server. The algorithm sorts through a database of available shipments and returns a list of suitable shipment combinations (taking into consideration shipment "mixability" ie. whether certain shipments types like food or chemicals can be transported together) and individual shipments that will fit in the driver's truck (by length and total weight), and matches the intended route. The app displays the results with information such as total price and distance so that drivers can choose the most desirable shipping orders to accept. The intended purpose of the app is to optimize driver profitability per trip, reduce shipment wait times before being accepted, improve safety by preventing drivers from overloading, and reduce the  environmental impact from drivers taking less than full cargo loads.
 
-Getting Started
+## Getting Started
 Download the app from: https://github.com/git-hacker/quickload-app
 Download the server from: https://github.com/git-hacker/quickload-server
 Refer to server setup instructions in the quickload-server repo README
 
-Prerequisites
+## Prerequisites
 Download and install WeChat Mini-Program IDE (https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=18091020)
 
 
-Running the app
+## Running the app
 Open the Wechat IDE.
 If the IDE prompts you to login, scan the QR code via WeChat from your mobile device.
 Select the purple box on the left for WeChat Mini-Program
